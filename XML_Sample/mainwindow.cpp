@@ -45,7 +45,7 @@ QList<Student> MainWindow::readXML () {
     QFile file (":/xml/sample.xml");
     if (!file.open (QIODevice::ReadOnly)) {
         // Error while loading file
-        qDebug () << "Error while loading file" << endl;
+        qDebug () << "Error while loading file" << Qt::endl;
 
     } else {
 
@@ -105,7 +105,7 @@ void MainWindow::loadXMLFile () {
     QFile file (filename);
     if (!file.open (QFile::ReadOnly | QFile::Text)) {
         qDebug () << "Error: Cannot read file " << qPrintable (filename) << ": "
-                  << qPrintable (file.errorString ()) << endl;
+                  << qPrintable (file.errorString ()) << Qt::endl;
     }
 
     Rxml.setDevice (&file);
@@ -143,10 +143,10 @@ void MainWindow::loadXMLFile () {
 
         if (Rxml.hasError ()) {
             qDebug () << "Error: Failed to parse file " << qPrintable (filename)
-                      << ": " << qPrintable (Rxml.errorString ()) << endl;
+                      << ": " << qPrintable (Rxml.errorString ()) << Qt::endl;
         } else if (file.error () != QFile::NoError) {
             qDebug () << "Error: Cannot read file " << qPrintable (filename)
-                      << ": " << qPrintable (file.errorString ()) << endl;
+                      << ": " << qPrintable (file.errorString ()) << Qt::endl;
         }
     }
     file.close ();
