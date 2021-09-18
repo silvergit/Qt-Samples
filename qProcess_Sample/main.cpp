@@ -17,6 +17,8 @@ bool test () {
         return false;
     QByteArray result = gzip.readAll ();
     qInfo () << "Result: " << result;
+    qInfo () << "Exit code: " << gzip.exitCode ();
+
     return true;
 }
 
